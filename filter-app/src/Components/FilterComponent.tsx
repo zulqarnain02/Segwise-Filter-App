@@ -53,8 +53,8 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
 
   const numberOperators = [
     { value: 'greater_than', label: 'Greater than' },
-    { value: 'less_than', label: 'Less than' },
-    { value: 'equal_to', label: 'Equal to' }
+    { value: 'less_than', label: 'Lesser than' },
+    { value: 'equal_to', label: 'Equals' }
   ];
 
   const filteredHeaders = headers.filter(header =>
@@ -141,21 +141,6 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
     return values.filter(value => value.toLowerCase().includes(valueSearchTerm.toLowerCase()));
   };
 
-  // const ActiveFilter = ({ filter, onRemove }: { filter: FilterCondition; onRemove: () => void }) => {
-  //   return (
-  //     <div className="active-filter">
-  //       <div className="active-filter-content">
-  //         <span>{filter.column}</span>
-  //         <span>{filter.operator}</span>
-  //         <span>{filter.value}</span>
-  //       </div>
-  //       <button className="delete-icon" onClick={onRemove} aria-label="Remove filter">
-  //         <Trash2 size={14} />
-  //       </button>
-  //     </div>
-  //   );
-  // };
-
   return (
     <div className="filter-container">
       <div className="header">
@@ -176,8 +161,11 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
         <div className="content-area">
           <div className="filter-wrapper" ref={filterRef}>
             <button className="filter-button" onClick={onFilterClick}>
-              <Filter size={16} />
-              <span>Filters {activeFilters.length > 0 && `(${activeFilters.length.toString().padStart(2, '0')})`}</span>
+              <Filter size={20} />
+              <span>Filters</span>
+              {activeFilters.length > 0 && 
+                <span className="filter-count">{activeFilters.length.toString().padStart(2, '0')}</span>
+              }
               <svg
                 className={`arrow-icon ${isOpen ? 'open' : ''}`}
                 width="10"
@@ -186,7 +174,7 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M1 1L5 5L9 1" stroke="#64748B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 6L0 0L10 0L5 6Z" fill="#667085"/>
               </svg>
             </button>
 
@@ -215,7 +203,7 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
                     {showColumnList ? (
                       <>
                         <div className="filter-search">
-                          <Search className="search-icon" />
+                          <Search className="search-icon" size={20} />
                           <input
                             type="text"
                             placeholder="Search columns"
@@ -268,7 +256,7 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
                           <>
                             <div className="value-search">
                               <div className="filter-search">
-                                <Search className="search-icon" />
+                                <Search className="search-icon" size={20} />
                                 <input
                                   type="text"
                                   placeholder="Search values"

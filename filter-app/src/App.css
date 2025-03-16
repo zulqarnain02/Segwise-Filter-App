@@ -1,5 +1,5 @@
 .filter-container {
-  width: 100%;
+  width: 1440px;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,8 @@
   height: 57.3773307800293px;
   justify-content: space-between;
 }
+
+
 
 .logo-section {
   display: flex;
@@ -49,14 +51,16 @@
   padding: 30px 67px;
 }
 
+
 .content-area {
   width: 1309.220703125px;
-  height: 181px;
+  height: 181.6px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #00001F;
 }
+
 
 .filter-wrapper {
   position: relative;
@@ -73,30 +77,51 @@
 .filter-button {
   display: flex;
   align-items: center;
-  gap: 12px;
-  background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  gap: 8px;
+  background: #FFFFFF;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #1E293B;
 }
 
 .filter-button span {
-  color: #1E293B;
+  color: #344054;
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filter-button span::after {
+  content: attr(data-count);
+  background: #F2F4F7;
+  padding: 2px 6px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: #344054;
+  margin-left: 4px;
 }
 
 .filter-button:hover {
-  background-color: #F8FAFC;
+  background-color: #F9FAFB;
+}
+
+.filter-button svg {
+  color: #868f9d;
+}
+
+.filter-button:hover svg {
+  color: #354355;
 }
 
 .filter-icon {
   width: 18px;
   height: 18px;
-  color: #64748B;
+  color: #344054;
 }
 
 .filter-text {
@@ -246,33 +271,41 @@
 }
 
 .filter-logic {
+  height: 32px;
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin: 4px 0;
+  gap: 4px;
+  background: #F6F8FA;
+  padding: 2px;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 4px auto;
+  min-width: 140px;
 }
 
 .logic-button {
+  flex: 1;
   padding: 4px 12px;
-  border: 1px solid #E2E8F0;
-  border-radius: 4px;
-  background: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
   color: #64748B;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-width: 45px;
+  text-align: center;
 }
 
 .logic-button.active {
-  background: #1E293B;
-  color: #FFFFFF;
-  border-color: #1E293B;
+  background: #FFFFFF;
+  color: #000000;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .logic-button:hover:not(.active) {
-  background: #F8FAFC;
-  border-color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .remove-filter-button {
@@ -425,14 +458,15 @@
 /* Main container */
 /* CSV Table styles that match FilterComponent */
 .csv-container {
-  width: 1312px;
+  width: 1440px;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   font-family: "Inter", sans-serif;
   background-color: #ffffff;
-  padding: 0 67px 30px;
+  /* padding: 0 67px 30px; */
 }
+
 
 /* Header card */
 .csv-header-card {
@@ -950,4 +984,26 @@
 .apply-sort-button:disabled {
   background-color: #CBD5E1;
   cursor: not-allowed;
+}
+
+.filter-count {
+  justify-content: center;
+  width: 36px;
+  height: 18px;
+  border-radius: 99px;
+  border-width: 1px;
+  gap: 10px;
+  padding-top: 2px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  background: var(--Green-300, #E3FA99);
+  border: 1px solid var(--blackopacity-2, #00000005)
+}
+
+
+
+.arrow-icon {
+  margin-left: 4px;
+  transition: transform 0.2s;
 }
