@@ -524,6 +524,8 @@
   color: #9ca3af;
 }
 
+
+
 .csv-search-input {
   width: 100%;
   padding: 8px 12px 8px 40px;
@@ -659,7 +661,7 @@
   transition: background-color 0.2s ease;
 }
 
-.plus-icon{
+.plus-icon {
   background: var(--Green-300, #E3FA99);
   border: 1px solid var(--blackopacity-6, #0000000F)
 }
@@ -713,7 +715,6 @@
 
 .value-search .search-icon {
   position: absolute;
-  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   color: #64748B;
@@ -725,11 +726,11 @@
   padding: 8px 0;
 }
 
-.checkbox-input{
+.checkbox-input {
   background: #FFFFFF;
   border: 1px solid var(--blackopacity-8, #00000014)
-
 }
+
 .checkbox-label {
   display: flex;
   align-items: center;
@@ -828,7 +829,7 @@
   font-size: 14px;
   background: #FFFFFF;
   color: #1E293B;
-  
+
 }
 
 .filter-input {
@@ -857,7 +858,6 @@
 .search-icon {
   width: 20px;
   height: 20px;
-
 }
 
 .filter-hierarchy {

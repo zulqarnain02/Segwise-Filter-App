@@ -42,6 +42,7 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
   const [numericValue, setNumericValue] = useState<string>("");
   const [textValue, setTextValue] = useState<string>("");
   const [showColumnList, setShowColumnList] = useState(true);
+  const [valueSearchTerm, setValueSearchTerm] = useState("");
 
   const stringOperators = [
     { value: 'is', label: 'Is' },
@@ -133,6 +134,11 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
   const handleBackToColumns = () => {
     setShowColumnList(true);
     setSelectedColumn("");
+  };
+
+  const getFilteredValues = (columnIndex: number) => {
+    const values = getUniqueColumnValues(columnIndex);
+    return values.filter(value => value.toLowerCase().includes(valueSearchTerm.toLowerCase()));
   };
 
   // const ActiveFilter = ({ filter, onRemove }: { filter: FilterCondition; onRemove: () => void }) => {
@@ -260,6 +266,18 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
                           </div>
                         ) : (
                           <>
+                            <div className="value-search">
+                              <div className="filter-search">
+                                <Search className="search-icon" />
+                                <input
+                                  type="text"
+                                  placeholder="Search values"
+                                  value={valueSearchTerm}
+                                  onChange={(e) => setValueSearchTerm(e.target.value)}
+                                  className="search-input"
+                                />
+                              </div>
+                            </div>
                             <select
                               value={selectedOperator}
                               onChange={(e) => setSelectedOperator(e.target.value as FilterCondition['operator'])}
@@ -272,14 +290,13 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
 
                             {selectedOperator === 'is' || selectedOperator === 'is_not' ? (
                               <div className="checkbox-group">
-                                {getUniqueColumnValues(headers.indexOf(selectedColumn)).map(value => (
+                                {getFilteredValues(headers.indexOf(selectedColumn)).map(value => (
                                   <label key={value} className="checkbox-label">
                                     <input className="checkbox-input"
                                       type="checkbox"
                                       checked={selectedValues.includes(value)}
                                       onChange={() => handleValueCheckboxChange(value)}
                                     />
-                                    
                                     <span>{value}</span>
                                   </label>
                                 ))}
