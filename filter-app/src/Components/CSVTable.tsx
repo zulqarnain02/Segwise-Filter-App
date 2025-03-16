@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Upload, ArrowUpDown } from "lucide-react"
+import { Upload, ArrowUpDown, Search } from "lucide-react"
 
 
 interface CSVTableProps {
@@ -17,6 +17,8 @@ export default function CSVTable({
   csvData,
   headers,
   fileName,
+  searchTerm,
+  onSearchChange,
   onFileUpload
 }: CSVTableProps) {
   const [sortColumn, setSortColumn] = React.useState<string>("");
@@ -70,34 +72,48 @@ export default function CSVTable({
       {csvData.length > 0 && (
         <div className="csv-table-container">
           <div className="csv-search-row">
-            <span className="csv-row-count">{csvData.length} rows</span>
-            <div className="sort-controls">
-              <select
-                value={sortColumn}
-                onChange={(e) => setSortColumn(e.target.value)}
-                className="sort-select"
-              >
-                <option value="">Select Column</option>
-                {headers.map(header => (
-                  <option key={header} value={header}>{header}</option>
-                ))}
-              </select>
-              <select
-                value={sortDirection}
-                onChange={(e) => setSortDirection(e.target.value as 'asc' | 'desc')}
-                className="sort-direction-select"
-              >
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
-              </select>
-              <button
-                onClick={handleSort}
-                className="apply-sort-button"
-                disabled={!sortColumn}
-              >
-                <ArrowUpDown size={16} />
-                Apply Sort
-              </button>
+            <div className="csv-search-row-top">
+              <span className="csv-row-count">{csvData.length} rows</span>
+              <div className="sort-controls">
+                <select
+                  value={sortColumn}
+                  onChange={(e) => setSortColumn(e.target.value)}
+                  className="sort-select"
+                >
+                  <option value="">Select Column</option>
+                  {headers.map(header => (
+                    <option key={header} value={header}>{header}</option>
+                  ))}
+                </select>
+                <select
+                  value={sortDirection}
+                  onChange={(e) => setSortDirection(e.target.value as 'asc' | 'desc')}
+                  className="sort-direction-select"
+                >
+                  <option value="asc">Ascending</option>
+                  <option value="desc">Descending</option>
+                </select>
+                <button
+                  onClick={handleSort}
+                  className="apply-sort-button"
+                  disabled={!sortColumn}
+                >
+                  <ArrowUpDown size={16} />
+                  Apply Sort
+                </button>
+              </div>
+            </div>
+            <div className="csv-search-row-bottom">
+              <div className="csv-search-container">
+                <Search className="csv-search-icon" size={20} />
+                <input
+                  type="text"
+                  placeholder="Search in table..."
+                  value={searchTerm}
+                  onChange={(e) => onSearchChange(e.target.value)}
+                  className="csv-search-input"
+                />
+              </div>
             </div>
           </div>
           <div className="csv-table-wrapper">

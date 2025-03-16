@@ -1,54 +1,107 @@
-# React + TypeScript + Vite
+# CSV Filter Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive web application for uploading, viewing, and filtering CSV data with a beautiful user interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📤 **CSV File Upload**: Easy drag-and-drop or click-to-upload functionality
+- 🔍 **Advanced Filtering**:
+  - Multiple filter conditions (AND/OR logic)
+  - Filter by column values
+  - Support for string and numeric filters
+  - Various operators (is, is not, contains, greater than, less than, etc.)
+- 🔎 **Global Search**: Search across all columns in the table
+- ⚡ **Real-time Updates**: Instant filtering and search results
+- 📊 **Table Features**:
+  - Column sorting (ascending/descending)
+  - Row count display
+  - Responsive table layout
+- 💅 **Modern UI/UX**:
+  - Clean and intuitive interface
+  - Smooth animations
+  - Responsive design
+  - Consistent styling
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+[Add your screenshots here]
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Technologies Used
+
+- React
+- TypeScript
+- CSS3
+- Lucide Icons
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/csv-filter-app.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Navigate to the project directory:
+```bash
+cd csv-filter-app
 ```
+
+3. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Start the development server:
+```bash
+npm start
+# or
+yarn start
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Usage
+
+1. Click the "Choose CSV File" button to upload your CSV file
+2. Use the filter button to add multiple filter conditions
+3. Use the search bar to search across all columns
+4. Sort data by clicking the sort controls and selecting columns
+5. View the filtered results in real-time
+
+## Filter Types
+
+### String Filters
+- Is
+- Is not
+- Contains
+- Does not contain
+
+### Numeric Filters
+- Greater than
+- Less than
+- Equal to
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Lucide Icons](https://lucide.dev/) for beautiful icons
+- [Inter Font](https://fonts.google.com/specimen/Inter) for typography
