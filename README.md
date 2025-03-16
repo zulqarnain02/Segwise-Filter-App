@@ -1,4 +1,4 @@
-# CSV Filter Application
+# 🔍CSV Filter Application
 
 A modern, interactive web application for uploading, viewing, and filtering CSV data with a beautiful user interface.
 
