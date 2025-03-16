@@ -1,7 +1,8 @@
 "use client"
 
 import React from "react"
-import { Search, Upload, ArrowUpDown } from "lucide-react"
+import { Upload, ArrowUpDown } from "lucide-react"
+
 
 interface CSVTableProps {
   csvData: string[][]
@@ -16,8 +17,6 @@ export default function CSVTable({
   csvData,
   headers,
   fileName,
-  searchTerm,
-  onSearchChange,
   onFileUpload
 }: CSVTableProps) {
   const [sortColumn, setSortColumn] = React.useState<string>("");

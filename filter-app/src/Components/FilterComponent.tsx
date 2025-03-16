@@ -135,20 +135,20 @@ export const FilterComponent: React.FC<FilterComponentProps> = ({
     setSelectedColumn("");
   };
 
-  const ActiveFilter = ({ filter, onRemove }: { filter: FilterCondition; onRemove: () => void }) => {
-    return (
-      <div className="active-filter">
-        <div className="active-filter-content">
-          <span>{filter.column}</span>
-          <span>{filter.operator}</span>
-          <span>{filter.value}</span>
-        </div>
-        <button className="delete-icon" onClick={onRemove} aria-label="Remove filter">
-          <Trash2 size={14} />
-        </button>
-      </div>
-    );
-  };
+  // const ActiveFilter = ({ filter, onRemove }: { filter: FilterCondition; onRemove: () => void }) => {
+  //   return (
+  //     <div className="active-filter">
+  //       <div className="active-filter-content">
+  //         <span>{filter.column}</span>
+  //         <span>{filter.operator}</span>
+  //         <span>{filter.value}</span>
+  //       </div>
+  //       <button className="delete-icon" onClick={onRemove} aria-label="Remove filter">
+  //         <Trash2 size={14} />
+  //       </button>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div className="filter-container">
