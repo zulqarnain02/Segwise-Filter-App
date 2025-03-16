@@ -24,7 +24,12 @@ A modern, interactive web application for uploading, viewing, and filtering CSV 
 
 ## Screenshots
 
-[Add your screenshots here]
+![image](https://github.com/user-attachments/assets/666dd2a0-fe81-4112-9240-8eed3621c0c0)
+![image](https://github.com/user-attachments/assets/007a888a-7057-47d0-8759-e8f8dae244b5)
+![image](https://github.com/user-attachments/assets/1f953672-126d-4830-9988-11128b9ba15a)
+![image](https://github.com/user-attachments/assets/c3e493de-3fb6-46f1-b1d7-8c4b877cc262)
+![image](https://github.com/user-attachments/assets/80e273cd-06a4-404f-9668-f66f0961252a)
+![image](https://github.com/user-attachments/assets/40ff4b92-25c8-4eed-95e2-7e95d8608070)
 
 ## Technologies Used
 
